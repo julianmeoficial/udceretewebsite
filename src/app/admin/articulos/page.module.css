@@ -1,0 +1,39 @@
+.link {
+  font-weight: 600;
+  color: var(--brand-night);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.actionLink {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--brand-night);
+  text-decoration: underline;
+}
+
+.date {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-700);
+}
+
+.status_draft {
+  color: var(--color-ink-700);
+}
+
+.status_published {
+  color: var(--brand-night);
+  font-weight: 600;
+}
+
+.status_scheduled {
+  color: color-mix(in srgb, var(--brand-night) 70%, var(--brand-gold));
+  font-weight: 600;
+}
+
+.status_archived {
+  color: var(--color-ink-400);
+}

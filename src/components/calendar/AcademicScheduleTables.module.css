@@ -1,0 +1,158 @@
+.wrap {
+  margin-bottom: var(--space-7);
+}
+
+.header {
+  margin-bottom: var(--space-5);
+  max-width: 52ch;
+}
+
+.ref {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-ink-400);
+  margin-bottom: var(--space-2);
+}
+
+.legend {
+  font-size: 0.95rem;
+  line-height: var(--leading-body);
+  color: var(--color-ink-700);
+}
+
+.tracks {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 900px) {
+  .tracks {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-7);
+  }
+}
+
+.track {
+  min-width: 0;
+  padding-top: var(--space-1);
+  border-top: 2px solid var(--brand-night);
+}
+
+.trackTitle {
+  margin: var(--space-3) 0 var(--space-4);
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  color: var(--brand-night);
+}
+
+.week {
+  margin-bottom: var(--space-5);
+}
+
+.weekHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.badgeA,
+.badgeB {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.badgeA {
+  color: var(--brand-night);
+}
+
+.badgeB {
+  color: color-mix(in srgb, var(--brand-night) 70%, var(--brand-gold));
+}
+
+.sessionCount {
+  font-size: 0.8rem;
+  color: var(--color-ink-400);
+  font-variant-numeric: tabular-nums;
+}
+
+.sessionList {
+  list-style: none;
+  display: grid;
+  gap: 0;
+}
+
+.session {
+  display: grid;
+  grid-template-columns: 2.25rem 1fr;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: 10px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+}
+
+.session:last-child {
+  border-bottom: none;
+}
+
+.sessionNum {
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-400);
+}
+
+.sessionDate {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--brand-night);
+  font-variant-numeric: tabular-nums;
+  text-transform: capitalize;
+}
+
+.evals {
+  margin-top: var(--space-2);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.evalsTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ink-400);
+  margin-bottom: var(--space-3);
+}
+
+.evalList {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.evalItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-4);
+  font-size: 0.9rem;
+}
+
+.evalItem dt {
+  color: var(--color-ink-700);
+}
+
+.evalItem dd {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--brand-night);
+  text-align: right;
+}

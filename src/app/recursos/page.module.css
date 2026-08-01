@@ -1,0 +1,143 @@
+.page {
+  padding: var(--space-6) 0 var(--space-8);
+}
+
+.header {
+  margin-bottom: var(--space-5);
+}
+
+.kicker {
+  font-size: var(--text-kicker);
+  font-weight: 600;
+  letter-spacing: var(--track-kicker);
+  text-transform: uppercase;
+  color: var(--color-ink-400);
+  margin-bottom: var(--space-2);
+}
+
+.title {
+  font-size: var(--text-title);
+  font-weight: 600;
+  letter-spacing: var(--track-display);
+  line-height: var(--leading-display);
+  color: var(--brand-night);
+}
+
+.subtitle {
+  color: var(--color-ink-700);
+  margin-top: var(--space-2);
+  max-width: 52ch;
+  font-size: var(--text-body-lg);
+  letter-spacing: var(--track-body);
+  line-height: var(--leading-body);
+}
+
+.typePills {
+  margin-bottom: var(--space-4);
+}
+
+.count {
+  font-size: 0.9rem;
+  color: var(--color-ink-400);
+  margin-bottom: var(--space-3);
+}
+
+.empty {
+  padding: var(--space-6) 0;
+  color: var(--color-ink-700);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.itemBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.itemType {
+  font-size: var(--text-kicker);
+  font-weight: 600;
+  letter-spacing: var(--track-kicker);
+  text-transform: uppercase;
+  color: var(--color-ink-400);
+  margin-bottom: var(--space-2);
+}
+
+.itemTitle {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: var(--track-body);
+  line-height: var(--leading-tight);
+  color: var(--brand-night);
+  margin-bottom: var(--space-2);
+}
+
+.itemDesc {
+  color: var(--color-ink-700);
+  font-size: 0.95rem;
+  line-height: var(--leading-body);
+  margin-bottom: var(--space-2);
+  max-width: 56ch;
+}
+
+.itemMeta {
+  font-size: 0.85rem;
+  color: var(--color-ink-400);
+}
+
+.download {
+  flex-shrink: 0;
+  margin-top: var(--space-1);
+}
+
+.toolsSection {
+  margin-top: var(--space-8);
+  padding-top: var(--space-7);
+  border-top: 1px solid var(--color-border);
+}
+
+.toolsHeader {
+  margin-bottom: var(--space-5);
+  max-width: 52ch;
+}
+
+.toolsTitle {
+  font-size: var(--text-section);
+  font-weight: 600;
+  letter-spacing: var(--track-title);
+  line-height: var(--leading-title);
+  color: var(--brand-night);
+  margin-top: var(--space-2);
+}
+
+.toolsSubtitle {
+  color: var(--color-ink-700);
+  margin-top: var(--space-2);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+@media (max-width: 640px) {
+  .item {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .download {
+    align-self: flex-start;
+  }
+}

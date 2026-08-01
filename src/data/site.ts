@@ -1,0 +1,15 @@
+export const siteConfig = {
+  name: "Blog UDEC Cereté",
+  shortName: "UDEC Cereté",
+  description:
+    "Portal del Centro Tutorial Cereté de la Universidad de Cartagena. Avisos académicos, calendario, recursos y herramientas para la comunidad estudiantil.",
+  url: "https://ctcerete.udec.edu.co",
+  locale: "es-CO",
+  center: {
+    name: "Centro Tutorial Cereté",
+    university: "Universidad de Cartagena",
+    city: "Cereté, Córdoba",
+    email: "ctcerete@unicartagena.edu.co",
+    phone: "+57 (4) 660 0000",
+  },
+};

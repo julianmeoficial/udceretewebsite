@@ -1,0 +1,43 @@
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid color-mix(in srgb, var(--color-danger) 40%, var(--color-border));
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--color-danger) 8%, white);
+}
+
+.message {
+  font-size: 0.9rem;
+  color: var(--brand-night);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.confirm,
+.cancel {
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.confirm {
+  color: white;
+  background: var(--color-danger);
+  border: none;
+}
+
+.cancel {
+  color: var(--brand-night);
+  background: transparent;
+  border: 1px solid var(--color-border);
+}

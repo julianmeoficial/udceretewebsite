@@ -1,0 +1,136 @@
+.field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--brand-night);
+}
+
+.hint {
+  font-size: 0.8125rem;
+  color: var(--color-ink-400);
+  letter-spacing: -0.005em;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  width: 100%;
+  min-height: 44px;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(18px) saturate(1.35);
+  -webkit-backdrop-filter: blur(18px) saturate(1.35);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.65) inset,
+    0 8px 24px rgba(21, 21, 50, 0.06);
+  color: var(--brand-night);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  letter-spacing: -0.011em;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out);
+}
+
+.trigger:hover {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.triggerOpen {
+  border-color: color-mix(in srgb, var(--brand-gold) 55%, white);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 0 0 3px color-mix(in srgb, var(--brand-gold) 28%, transparent),
+    0 12px 28px rgba(21, 21, 50, 0.08);
+}
+
+.value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--color-ink-400);
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.triggerOpen .chevron {
+  transform: rotate(180deg);
+  color: var(--brand-night);
+}
+
+.menu {
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  max-height: 280px;
+  overflow: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(247, 246, 250, 0.72);
+  backdrop-filter: blur(28px) saturate(1.5);
+  -webkit-backdrop-filter: blur(28px) saturate(1.5);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 18px 40px rgba(21, 21, 50, 0.14),
+    0 2px 8px rgba(21, 21, 50, 0.06);
+}
+
+.option {
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  letter-spacing: -0.011em;
+  color: var(--brand-night);
+  cursor: pointer;
+}
+
+.optionActive {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.optionSelected {
+  font-weight: 600;
+  background: color-mix(in srgb, var(--brand-gold) 28%, transparent);
+}
+
+.optionSelected.optionActive {
+  background: color-mix(in srgb, var(--brand-gold) 38%, white);
+}
+
+.error {
+  font-size: 0.85rem;
+  color: var(--brand-coral);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .trigger,
+  .menu {
+    background: rgba(255, 255, 255, 0.94);
+  }
+}

@@ -1,0 +1,87 @@
+.tool {
+  width: 100%;
+}
+
+.stylePills {
+  margin-bottom: var(--space-4);
+}
+
+.layout {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.panel {
+  padding: var(--space-5) 0 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.panelTitle {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+  color: var(--brand-night);
+}
+
+.form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.demos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.demoBtn {
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  background: transparent;
+  border-radius: 0;
+  padding: 0.25rem 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--brand-night);
+}
+
+.output {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  min-height: 120px;
+  white-space: pre-wrap;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.note {
+  margin-top: var(--space-3);
+  font-size: 0.85rem;
+  color: var(--color-ink-400);
+  line-height: var(--leading-body);
+}
+
+@media (min-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .demos {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

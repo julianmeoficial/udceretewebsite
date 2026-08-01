@@ -1,0 +1,38 @@
+.wrap {
+  margin-top: var(--space-5);
+}
+
+.label {
+  font-size: var(--text-kicker);
+  font-weight: 600;
+  letter-spacing: var(--track-kicker);
+  text-transform: uppercase;
+  color: var(--color-ink-400);
+  margin-bottom: var(--space-2);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tag {
+  display: inline-flex;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--brand-night);
+  text-decoration: none;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out);
+}
+
+.tag:hover {
+  border-color: var(--brand-night);
+  background: color-mix(in srgb, var(--brand-gold) 18%, white);
+  text-decoration: none;
+}

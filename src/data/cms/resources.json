@@ -1,0 +1,179 @@
+[
+  {
+    "id": "res-1",
+    "title": "Calendario académico 2026-2 (PDF)",
+    "description": "Fechas oficiales del semestre para el Centro Tutorial Cereté.",
+    "type": "guía",
+    "size": "420 KB",
+    "updatedAt": "2026-07-25",
+    "tags": [
+      "calendario",
+      "2026-2"
+    ],
+    "programs": [
+      "General"
+    ]
+  },
+  {
+    "id": "res-2",
+    "title": "Formato solicitud financiación matrícula",
+    "description": "Formulario para estudiantes sin matrícula cero.",
+    "type": "formato",
+    "size": "180 KB",
+    "updatedAt": "2026-07-17",
+    "tags": [
+      "matrícula",
+      "financiación"
+    ],
+    "programs": [
+      "General"
+    ]
+  },
+  {
+    "id": "res-3",
+    "title": "Instructivo legalización de matrícula",
+    "description": "Paso a paso según Acuerdo N° 46-26 y Resolución N° 13.",
+    "type": "guía",
+    "size": "310 KB",
+    "updatedAt": "2026-07-16",
+    "tags": [
+      "matrícula",
+      "legalización"
+    ],
+    "programs": [
+      "General"
+    ]
+  },
+  {
+    "id": "res-4",
+    "title": "Pensum Administración Financiera",
+    "description": "Malla curricular vigente del programa.",
+    "type": "guía",
+    "size": "520 KB",
+    "updatedAt": "2026-07-11",
+    "tags": [
+      "pensum",
+      "administración"
+    ],
+    "programs": [
+      "Administración Financiera"
+    ]
+  },
+  {
+    "id": "res-5",
+    "title": "Pensum Seguridad y Salud en el Trabajo",
+    "description": "Malla curricular vigente del programa SST.",
+    "type": "guía",
+    "size": "498 KB",
+    "updatedAt": "2026-07-11",
+    "tags": [
+      "pensum",
+      "sst"
+    ],
+    "programs": [
+      "Seguridad y Salud en el Trabajo"
+    ]
+  },
+  {
+    "id": "res-6",
+    "title": "Pensum Tecnología Agroindustrial",
+    "description": "Malla curricular vigente del programa.",
+    "type": "guía",
+    "size": "505 KB",
+    "updatedAt": "2026-07-11",
+    "tags": [
+      "pensum",
+      "agroindustrial"
+    ],
+    "programs": [
+      "Tecnología Agroindustrial"
+    ]
+  },
+  {
+    "id": "res-7",
+    "title": "Formato homologación cursos libres",
+    "description": "Documento para radicar homologaciones 2026-2.",
+    "type": "formato",
+    "size": "145 KB",
+    "updatedAt": "2026-07-11",
+    "tags": [
+      "homologación"
+    ],
+    "programs": [
+      "General"
+    ]
+  },
+  {
+    "id": "res-8",
+    "title": "Guía habilitaciones 2026-1",
+    "description": "Cronograma y paso a paso por programa.",
+    "type": "guía",
+    "size": "290 KB",
+    "updatedAt": "2026-07-01",
+    "tags": [
+      "habilitaciones"
+    ],
+    "programs": [
+      "General"
+    ]
+  },
+  {
+    "id": "res-9",
+    "title": "Asignaturas no habilitables por programa",
+    "description": "Listado de restricciones para el periodo 2026-1.",
+    "type": "guía",
+    "size": "210 KB",
+    "updatedAt": "2026-06-25",
+    "tags": [
+      "habilitaciones",
+      "restricciones"
+    ],
+    "programs": [
+      "General"
+    ]
+  },
+  {
+    "id": "res-10",
+    "title": "Plantilla informe de práctica SST",
+    "description": "Formato Word para entrega de informes de práctica.",
+    "type": "plantilla",
+    "size": "95 KB",
+    "updatedAt": "2026-06-10",
+    "tags": [
+      "práctica",
+      "informe"
+    ],
+    "programs": [
+      "Seguridad y Salud en el Trabajo"
+    ]
+  },
+  {
+    "id": "res-11",
+    "title": "Plantilla opción de grado",
+    "description": "Estructura base para documento de grado.",
+    "type": "plantilla",
+    "size": "120 KB",
+    "updatedAt": "2026-07-29",
+    "tags": [
+      "opción de grado"
+    ],
+    "programs": [
+      "General"
+    ]
+  },
+  {
+    "id": "res-12",
+    "title": "Manual Kiosko Virtual de Autoatención",
+    "description": "Guía de uso del kiosko instalado en el centro tutorial.",
+    "type": "guía",
+    "size": "880 KB",
+    "updatedAt": "2026-07-17",
+    "tags": [
+      "kiosko",
+      "trámites"
+    ],
+    "programs": [
+      "General"
+    ]
+  }
+]

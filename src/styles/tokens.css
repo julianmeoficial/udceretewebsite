@@ -1,0 +1,81 @@
+:root {
+  /* Marca UDEC — Figma: dorado predominante */
+  --brand-gold: #f1c23d;
+  --brand-night: #151532;
+  --brand-plum: #3d2361;
+  --brand-teal: #23b994;
+  --brand-coral: #f05446;
+  --brand-amber: #f2a139;
+
+  /* Neutros Figma */
+  --color-ink-700: #3a3a55;
+  --color-ink-400: #767690;
+  --color-surface: #ffffff;
+  --color-surface-2: #f7f6fa;
+  --color-border: #e7e5ee;
+  --color-border-subtle: rgba(21, 21, 50, 0.15);
+
+  /* Semánticos */
+  --color-primary: var(--brand-gold);
+  --color-action: var(--brand-night);
+  --color-success: var(--brand-teal);
+  --color-warning: var(--brand-gold);
+  --color-danger: var(--brand-coral);
+
+  /* Tipografía — Inter editorial */
+  --font-ui: var(--font-inter), system-ui, sans-serif;
+  --font-serif: var(--font-source-serif), Georgia, serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+
+  --text-display: clamp(2.125rem, 4.8vw, 3.25rem);
+  --text-title: clamp(1.75rem, 3.5vw, 2.375rem);
+  --text-section: clamp(1.25rem, 2.4vw, 1.5rem);
+  --text-body: 1rem;
+  --text-body-lg: 1.125rem;
+  --text-meta: 0.8125rem;
+  --text-kicker: 0.6875rem;
+
+  --track-display: -0.035em;
+  --track-title: -0.028em;
+  --track-body: -0.011em;
+  --track-meta: -0.005em;
+  --track-kicker: 0.16em;
+
+  --leading-display: 1.05;
+  --leading-title: 1.15;
+  --leading-body: 1.6;
+  --leading-tight: 1.35;
+
+  /* Espaciado */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Radios */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-thumb: 6px;
+
+  /* Layout */
+  --container-max: 1200px;
+  --reading-max: 680px;
+  --header-height: 65px;
+  --mobile-nav-height: 64px;
+
+  /* Animación */
+  --duration-fast: 120ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgb(21 21 50 / 6%);
+  --shadow-md: 0 4px 12px rgb(21 21 50 / 8%);
+}

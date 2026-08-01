@@ -1,0 +1,22 @@
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+  color: var(--color-ink-400);
+  margin-bottom: var(--space-4);
+}
+
+.link {
+  color: var(--brand-night);
+  font-weight: 500;
+}
+
+.sep {
+  opacity: 0.5;
+}
+
+.current {
+  color: var(--brand-night);
+}

@@ -1,0 +1,10 @@
+.banner {
+  margin-bottom: var(--space-5);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid color-mix(in srgb, var(--brand-gold) 50%, var(--color-border));
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--brand-gold) 18%, white);
+  font-size: 0.85rem;
+  line-height: var(--leading-body);
+  color: var(--brand-night);
+}

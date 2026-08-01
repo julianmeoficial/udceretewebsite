@@ -1,0 +1,142 @@
+.wrap {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--brand-night);
+}
+
+.modes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+.mode,
+.modeActive {
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-ink-700);
+}
+
+.modeActive {
+  border-color: var(--brand-gold);
+  background: color-mix(in srgb, var(--brand-gold) 22%, white);
+  color: var(--brand-night);
+}
+
+.calendar {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  background: var(--color-surface);
+}
+
+.calHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.monthLabel {
+  font-size: 0.85rem;
+  font-weight: 650;
+  text-transform: capitalize;
+  color: var(--brand-night);
+}
+
+.navBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--brand-night);
+  cursor: pointer;
+}
+
+.navBtn:hover {
+  background: var(--color-surface-2);
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: var(--space-1);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: var(--color-ink-400);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.day,
+.dayEmpty {
+  aspect-ratio: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  border-radius: 6px;
+}
+
+.day {
+  border: none;
+  background: transparent;
+  color: var(--brand-night);
+  cursor: pointer;
+}
+
+.day:hover {
+  background: color-mix(in srgb, var(--brand-gold) 18%, white);
+}
+
+.dayToday {
+  box-shadow: inset 0 0 0 1px var(--brand-gold);
+}
+
+.daySelected {
+  background: var(--brand-night);
+  color: white;
+  font-weight: 650;
+}
+
+.daySelected:hover {
+  background: var(--brand-night);
+  color: white;
+}
+
+.dayEmpty {
+  pointer-events: none;
+}
+
+.summary {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--color-ink-700);
+}
+
+.summary strong {
+  color: var(--brand-night);
+  font-weight: 650;
+}

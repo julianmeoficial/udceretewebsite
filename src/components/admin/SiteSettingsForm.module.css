@@ -1,0 +1,15 @@
+.form {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 520px;
+}
+
+.error {
+  color: var(--color-danger);
+}
+
+.success {
+  padding: var(--space-3);
+  background: color-mix(in srgb, var(--brand-gold) 18%, white);
+  border-radius: var(--radius-sm);
+}

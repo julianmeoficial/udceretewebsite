@@ -1,0 +1,16 @@
+[
+  {
+    "id": "u1",
+    "email": "superadmin@unicartagena.edu.co",
+    "name": "Coordinación institucional",
+    "role": "superadmin",
+    "active": true
+  },
+  {
+    "id": "u2",
+    "email": "admin.cerete@unicartagena.edu.co",
+    "name": "Admin Centro Tutorial Cereté",
+    "role": "centro_admin",
+    "active": true
+  }
+]
