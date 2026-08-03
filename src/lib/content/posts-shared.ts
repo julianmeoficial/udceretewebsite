@@ -3,7 +3,7 @@
  * Sin I/O: seguro de importar en componentes `"use client"`.
  */
 import type { Category, Post } from "@/data/types";
-import { matchesQuery } from "@/lib/search";
+import { matchesQuery } from "@/lib/content/search";
 
 export const BLOG_CATEGORIES: Category[] = [
   "Académico",

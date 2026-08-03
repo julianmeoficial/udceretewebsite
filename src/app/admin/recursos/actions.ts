@@ -10,7 +10,7 @@ import { readCmsResources } from "@/lib/cms/read";
 import { revalidatePublicResources } from "@/lib/cms/revalidate";
 import { createId } from "@/lib/cms/utils";
 import { writeCmsResources } from "@/lib/cms/write";
-import { detectFileFormat, formatBytes, sanitizeFileName } from "@/lib/files";
+import { detectFileFormat, formatBytes, sanitizeFileName } from "@/lib/utils/files";
 
 function parseTags(raw: string): string[] {
   return raw

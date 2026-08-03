@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { getAllPosts } from "@/lib/posts";
+import { getAllPosts } from "@/lib/content/posts";
 import { ArchivePageContent } from "./ArchivePageContent";
 import styles from "./page.module.css";
 

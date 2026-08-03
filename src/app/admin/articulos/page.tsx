@@ -4,9 +4,9 @@ import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
 import { AdminTable } from "@/components/admin/AdminTable";
 import { Button } from "@/components/ui/Button";
 import type { CmsPost } from "@/data/types";
-import { isFutureDate, todayISO } from "@/lib/dates";
-import { formatShortDate } from "@/lib/format";
-import { getAllPostsForAdmin } from "@/lib/posts";
+import { isFutureDate, todayISO } from "@/lib/utils/dates";
+import { formatShortDate } from "@/lib/utils/format";
+import { getAllPostsForAdmin } from "@/lib/content/posts";
 import styles from "./page.module.css";
 
 function statusLabel(post: CmsPost): string {

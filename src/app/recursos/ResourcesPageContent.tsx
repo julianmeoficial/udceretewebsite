@@ -6,7 +6,7 @@ import { CitationTool } from "@/components/citations/CitationTool";
 import { CategoryPills } from "@/components/ui/CategoryPills";
 import { Button } from "@/components/ui/Button";
 import type { Resource, ResourceType } from "@/data/types";
-import { formatShortDate } from "@/lib/format";
+import { formatShortDate } from "@/lib/utils/format";
 import styles from "./page.module.css";
 
 const typeLabels: Record<ResourceType, string> = {

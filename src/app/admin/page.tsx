@@ -2,7 +2,7 @@ import Link from "next/link";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
 import { Button } from "@/components/ui/Button";
 import { readCmsEvents, readCmsPosts } from "@/lib/cms/read";
-import { formatShortDate } from "@/lib/format";
+import { formatShortDate } from "@/lib/utils/format";
 import styles from "./page.module.css";
 
 export default async function AdminDashboardPage() {

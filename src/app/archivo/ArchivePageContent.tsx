@@ -12,7 +12,7 @@ import {
   getCategories,
   getPostTags,
   type PostSort,
-} from "@/lib/posts-shared";
+} from "@/lib/content/posts-shared";
 import styles from "./page.module.css";
 
 type Props = {

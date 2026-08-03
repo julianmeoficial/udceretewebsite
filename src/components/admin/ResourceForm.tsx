@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { TextAreaField, TextField } from "@/components/ui/Input";
 import { ACADEMIC_PROGRAMS } from "@/data/programs";
 import type { Program, Resource, ResourceType } from "@/data/types";
-import { detectFileFormat, formatBytes } from "@/lib/files";
+import { detectFileFormat, formatBytes } from "@/lib/utils/files";
 import { ConfirmBar } from "./ConfirmBar";
 import styles from "./ResourceForm.module.css";
 

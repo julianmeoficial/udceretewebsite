@@ -2,7 +2,7 @@
 
 import type { PostStatus } from "@/data/types";
 import { CategoryPills } from "@/components/ui/CategoryPills";
-import { isFutureDate, todayISO } from "@/lib/dates";
+import { isFutureDate, todayISO } from "@/lib/utils/dates";
 import styles from "./StatusPills.module.css";
 
 type Props = {

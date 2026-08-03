@@ -11,7 +11,7 @@ import {
 import {
   filterPostsList,
   type PostSort,
-} from "@/lib/posts-shared";
+} from "@/lib/content/posts-shared";
 
 export {
   BLOG_CATEGORIES,
@@ -21,7 +21,7 @@ export {
   getPostTags,
   filterPostsList,
   type PostSort,
-} from "@/lib/posts-shared";
+} from "@/lib/content/posts-shared";
 
 export async function getAllPosts(): Promise<Post[]> {
   const posts = await getPublishedPosts();

@@ -20,7 +20,7 @@ import type {
   Resource,
 } from "@/data/types";
 import { CMS_DIR, CMS_FILES } from "./paths";
-import { todayISO } from "@/lib/dates";
+import { todayISO } from "@/lib/utils/dates";
 
 async function readJsonFile<T>(filename: string, fallback: T): Promise<T> {
   try {

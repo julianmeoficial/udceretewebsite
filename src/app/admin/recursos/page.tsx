@@ -3,7 +3,7 @@ import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
 import { AdminTable } from "@/components/admin/AdminTable";
 import { Button } from "@/components/ui/Button";
 import { readCmsResources } from "@/lib/cms/read";
-import { formatShortDate } from "@/lib/format";
+import { formatShortDate } from "@/lib/utils/format";
 import styles from "../articulos/page.module.css";
 
 export default async function AdminResourcesPage() {

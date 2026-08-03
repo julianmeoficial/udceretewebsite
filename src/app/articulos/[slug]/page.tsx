@@ -8,9 +8,9 @@ import { TagList } from "@/components/blog/TagList";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Badge } from "@/components/ui/Badge";
 import { siteConfig } from "@/data/site";
-import { formatDate } from "@/lib/format";
-import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
-import { getReadingTime } from "@/lib/reading-time";
+import { formatDate } from "@/lib/utils/format";
+import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/content/posts";
+import { getReadingTime } from "@/lib/content/reading-time";
 import styles from "./page.module.css";
 
 type Props = {

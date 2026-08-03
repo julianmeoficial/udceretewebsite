@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { calendarEvents } from "@/data/calendar";
 import { posts } from "@/data/posts";
 import { resources } from "@/data/resources";
-import { formatShortDate } from "@/lib/format";
+import { formatShortDate } from "@/lib/utils/format";
 import {
   highlightMatch,
   resourceFileLabel,
@@ -16,7 +16,7 @@ import {
   searchPosts,
   searchResources,
   searchTramites,
-} from "@/lib/search";
+} from "@/lib/content/search";
 import styles from "./page.module.css";
 
 /**

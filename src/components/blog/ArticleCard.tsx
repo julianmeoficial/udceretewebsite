@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import type { Post } from "@/data/types";
-import { formatShortDate } from "@/lib/format";
+import { formatShortDate } from "@/lib/utils/format";
 import styles from "./ArticleCard.module.css";
 
 type Props = {

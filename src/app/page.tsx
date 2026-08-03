@@ -11,8 +11,8 @@ import { ArticleCard } from "@/components/blog/ArticleCard";
 import { FeaturedHero } from "@/components/blog/FeaturedHero";
 import { calendarEvents } from "@/data/calendar";
 import { quickLinks } from "@/data/nav";
-import { formatShortDate } from "@/lib/format";
-import { getAllPosts, getFeaturedPost } from "@/lib/posts";
+import { formatShortDate } from "@/lib/utils/format";
+import { getAllPosts, getFeaturedPost } from "@/lib/content/posts";
 import styles from "./page.module.css";
 
 const quickIcons = {

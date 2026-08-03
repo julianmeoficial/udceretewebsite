@@ -7,7 +7,7 @@ import {
   formatMonthYear,
   isFutureDate,
   todayISO,
-} from "@/lib/dates";
+} from "@/lib/utils/dates";
 import styles from "./PublishDatePicker.module.css";
 
 export type PublishMode = "now" | "schedule";

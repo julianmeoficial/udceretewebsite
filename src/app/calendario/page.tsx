@@ -8,8 +8,8 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { calendarEvents } from "@/data/calendar";
-import { formatDate } from "@/lib/format";
-import { buildIcs, downloadIcs } from "@/lib/ics";
+import { formatDate } from "@/lib/utils/format";
+import { buildIcs, downloadIcs } from "@/lib/calendar/ics";
 import styles from "./page.module.css";
 
 const weekdays = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
