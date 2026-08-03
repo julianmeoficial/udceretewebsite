@@ -1,3 +1,7 @@
+/**
+ * Matriz de permisos del panel admin.
+ * Modelo simple (2 roles) migrable a un motor de ACL más fino.
+ */
 import type { UserRole } from "@/data/types";
 
 export type AdminSection =

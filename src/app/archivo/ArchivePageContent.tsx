@@ -5,7 +5,7 @@ import { useState } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { ArticleCard } from "@/components/blog/ArticleCard";
 import { CategoryPills } from "@/components/ui/CategoryPills";
-import { GlassSelect } from "@/components/ui/GlassSelect";
+import { SelectField } from "@/components/ui/Input";
 import type { Post } from "@/data/types";
 import {
   filterPostsList,
@@ -80,7 +80,7 @@ export function ArchivePageContent({ initialPosts }: Props) {
               aria-label="Buscar publicaciones"
             />
           </label>
-          <GlassSelect
+          <SelectField
             id="sort"
             label="Ordenar"
             value={sort}

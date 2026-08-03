@@ -2,7 +2,7 @@
 
 Portal académico y blog editorial del **Centro Tutorial Cereté** (Universidad de Cartagena).
 
-> **Estado:** MVP de validación de UX  
+> **Estado:** MVP de validación de UX (limpieza post-prototipo)  
 > **Objetivo:** probar flujos, jerarquía de información y usabilidad con la comunidad estudiantil  
 > **No es** la versión de producción. La arquitectura definitiva (CMS, auth real, API, IA, PWA) llega en fases posteriores.
 
@@ -17,11 +17,50 @@ Este repositorio existe para **testear la experiencia de usuario** antes de inve
 | Navegación y hallazgos de contenido | Payload CMS / base de datos |
 | Lectura editorial y archivo | Auth real (Supabase / Magic Link) |
 | Calendario, recursos, bienestar | API Hono + backend |
-| Panel admin simulado (CMS en JSON) | Perplexity Sonar / IA en producción |
+| Panel admin simulado (CMS en JSON) | Asistente IA con fuentes reales |
 | Generador de citas y búsqueda client-side | PWA y apps móviles |
 | Identidad visual institucional | Despliegue endurecido y observabilidad |
 
 Los aprendizajes de este MVP alimentan el diseño y la priorización de la versión estable.
+
+---
+
+## Conservar vs descartar (post-MVP)
+
+Guía para el desarrollo formal. Los módulos marcados `@mvp` en el código son demos conscientes.
+
+### Conservar (fundación reutilizable)
+
+| Área | Ruta | Notas |
+|------|------|--------|
+| Tipos de dominio | `src/data/types.ts` | Contrato canónico entre capas |
+| CMS read/write API | `src/lib/cms/*` | Sustituir cuerpo por adaptador BD; mantener firmas |
+| Permisos y sesión | `src/lib/auth/permissions.ts`, `getSession` | Modelo de roles migrable |
+| Middleware admin | `src/middleware.ts` | Patrón de guardas |
+| Utilidades | `format`, `dates`, `ics`, `search`, `files`, `citation` (formato), `posts*` | Lógica pura |
+| SEO | `sitemap.ts`, `robots.ts` | |
+| Panel editorial | `components/admin/*` (salvo demo) | TipTap, formularios, tablas |
+| Lectura editorial | `components/blog/*` (salvo persistencia demo) | Cards, hero, progreso |
+
+### Descartado en esta limpieza
+
+| Pieza | Motivo |
+|-------|--------|
+| `lib/ai-demo.ts` + modo IA en `/buscar` | IA falsa (keyword switch); recrear con proveedor real |
+| `GlassSelect` + glassmorphism en inputs | Viola `.cursorrules` |
+| `Newsletter` | Suscripción simulada sin backend |
+| `FadeInItem` + dep. `motion` | Motion decorativo sin valor de tarea |
+
+### Descartar / recrear tras feedback UX (aún presentes, marcados `@mvp`)
+
+| Pieza | Motivo |
+|-------|--------|
+| `AdminDemoPanel` + `signInDemo*` | Auth sin verificación |
+| `/acceso` Magic Link simulado | Validar copy; no es login real |
+| `ArticleComments` (`localStorage`) | Persistencia por dispositivo |
+| `CategoryPills` (uso masivo) | Revisar filtros; evitar píldoras en todas partes |
+| `demoCitations` | Placeholder DOI |
+| Seeds en `src/data/*.ts` + JSON CMS | Pasar a fixtures/migración |
 
 ---
 
@@ -32,7 +71,7 @@ Los aprendizajes de este MVP alimentan el diseño y la priorización de la versi
 | Framework | Next.js 16 (App Router) |
 | UI | React 19 + TypeScript |
 | Estilos | CSS Modules + tokens en `src/styles/tokens.css` |
-| Motion | GSAP (hero) + Motion |
+| Motion | GSAP (hero / admin) |
 | Editor admin | TipTap |
 | Datos | JSON local en `src/data/cms/` (sin backend) |
 | Auth | Sesión simulada por cookie (`/acceso` → `/admin`) |
@@ -66,7 +105,7 @@ Abre [http://localhost:3000](http://localhost:3000).
 | `/` | Portada, destacado editorial, accesos rápidos |
 | `/archivo` | Listado filtrable de avisos |
 | `/articulos/[slug]` | Lectura de artículo |
-| `/buscar` | Búsqueda client-side |
+| `/buscar` | Búsqueda client-side del sitio |
 | `/calendario` | Calendario académico + export `.ics` |
 | `/recursos` | Guías y formatos por programa |
 | `/citas` | Generador APA 7 / Vancouver (demo) |
@@ -97,14 +136,13 @@ src/
 │   ├── blog/            # Lectura y cards
 │   ├── calendar/        # Calendario académico
 │   ├── citations/       # Generador de citas
-│   ├── home/            # Secciones de portada
 │   ├── layout/          # Header, footer, nav
 │   └── ui/              # Controles reutilizables
 ├── data/
 │   ├── cms/             # Fuente de verdad del MVP (JSON)
 │   └── *.ts             # Config, nav, tipos, helpers de datos
 ├── lib/
-│   ├── auth/            # Sesión y permisos simulados
+│   ├── auth/            # Sesión y permisos (parcialmente demo)
 │   ├── cms/             # Lectura/escritura JSON + revalidate
 │   └── *.ts             # Utilidades (fechas, búsqueda, ICS…)
 ├── styles/
@@ -142,7 +180,7 @@ Sugerencia de sesiones con usuarios (estudiantes / staff del centro):
 3. **Descargar un recurso** de su programa.
 4. **Generar una cita** APA o Vancouver.
 5. **Localizar una ruta de bienestar**.
-6. *(Staff)* Entrar por `/acceso` y publicar o editar un aviso en `/admin`.
+6. *(Staff)* Entrar por `/acceso` → `[admin test]` y publicar o editar un aviso en `/admin`.
 
 Anota fricción, copy confuso, jerarquía rota y tareas que el MVP aún no cubre. Esos hallazgos priorizan la versión sólida.
 
@@ -169,7 +207,8 @@ Cuando una pieza salga del MVP y entre a producción, actualiza esta sección y 
 2. No introduzcas infraestructura “de producción” sin necesidad de la prueba UX.
 3. Respeta tokens y reglas de diseño (`.cursorrules`).
 4. Prefiere datos en `src/data/cms/` sobre hardcodear contenido en componentes.
-5. Actualiza este README si cambias rutas, stack o alcance.
+5. Documenta módulos de dominio con JSDoc de módulo; marca demos con `@mvp`.
+6. Actualiza este README si cambias rutas, stack o alcance.
 
 ---
 

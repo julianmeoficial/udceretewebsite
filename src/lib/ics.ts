@@ -1,3 +1,7 @@
+/**
+ * Generación de archivos `.ics` (calendario académico).
+ * Reutilizable; respeta escapes y CRLF del RFC 5545.
+ */
 import type { CalendarEvent } from "@/data/types";
 
 function toIcsDate(iso: string): string {

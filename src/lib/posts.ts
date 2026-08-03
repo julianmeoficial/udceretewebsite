@@ -1,3 +1,7 @@
+/**
+ * Orquestación de posts públicos sobre el CMS.
+ * Conservar como capa de dominio al cambiar el backend de lectura.
+ */
 import type { Post } from "@/data/types";
 import {
   getPublishedPostBySlug,

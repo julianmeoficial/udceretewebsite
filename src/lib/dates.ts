@@ -1,3 +1,8 @@
+/**
+ * Fechas académicas en zona local (ISO `YYYY-MM-DD`).
+ * Evita desfases UTC al comparar periodos y publicaciones.
+ */
+
 /** Fecha local YYYY-MM-DD (sin UTC). */
 export function todayISO(): string {
   const d = new Date();

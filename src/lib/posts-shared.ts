@@ -1,3 +1,7 @@
+/**
+ * Constantes y filtros de posts usables en cliente y servidor.
+ * Sin I/O: seguro de importar en componentes `"use client"`.
+ */
 import type { Category, Post } from "@/data/types";
 import { matchesQuery } from "@/lib/search";
 

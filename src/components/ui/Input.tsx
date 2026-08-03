@@ -1,4 +1,8 @@
-import type { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
+import type {
+  InputHTMLAttributes,
+  SelectHTMLAttributes,
+  TextareaHTMLAttributes,
+} from "react";
 import styles from "./Input.module.css";
 
 type FieldProps = {
@@ -52,5 +56,50 @@ export function TextAreaField({
   );
 }
 
-export { GlassSelect as SelectField } from "./GlassSelect";
-export type { GlassSelectOption as SelectOption } from "./GlassSelect";
+export type SelectOption = {
+  value: string;
+  label: string;
+};
+
+type SelectFieldProps = FieldProps &
+  Omit<SelectHTMLAttributes<HTMLSelectElement>, "onChange"> & {
+    options: SelectOption[];
+    onChange?: (value: string) => void;
+  };
+
+/**
+ * Select nativo institucional.
+ * Sustituye el GlassSelect del MVP (glassmorphism, fuera de design system).
+ */
+export function SelectField({
+  label,
+  hint,
+  error,
+  id,
+  options,
+  className = "",
+  onChange,
+  ...props
+}: SelectFieldProps) {
+  return (
+    <div className={styles.field}>
+      <label className={styles.label} htmlFor={id}>
+        {label}
+      </label>
+      {hint ? <p className={styles.hint}>{hint}</p> : null}
+      <select
+        id={id}
+        className={`${styles.control} ${styles.select} ${className}`.trim()}
+        onChange={(event) => onChange?.(event.target.value)}
+        {...props}
+      >
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+      {error ? <p className={styles.error}>{error}</p> : null}
+    </div>
+  );
+}

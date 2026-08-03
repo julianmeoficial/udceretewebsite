@@ -5,12 +5,10 @@ import {
   CalendarDaysIcon,
   FolderIcon,
   HeartIcon,
-  SparklesIcon,
+  MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 import { ArticleCard } from "@/components/blog/ArticleCard";
 import { FeaturedHero } from "@/components/blog/FeaturedHero";
-import { Newsletter } from "@/components/home/Newsletter";
-import { FadeInItem } from "@/components/ui/FadeInItem";
 import { calendarEvents } from "@/data/calendar";
 import { quickLinks } from "@/data/nav";
 import { formatShortDate } from "@/lib/format";
@@ -19,7 +17,7 @@ import styles from "./page.module.css";
 
 const quickIcons = {
   calendar: CalendarDaysIcon,
-  ai: SparklesIcon,
+  search: MagnifyingGlassIcon,
   citation: BookOpenIcon,
   folder: FolderIcon,
   heart: HeartIcon,
@@ -82,10 +80,8 @@ export default async function HomePage() {
             </Link>
           </header>
           <div className={styles.grid}>
-            {latest.map((post, index) => (
-              <FadeInItem key={post.slug} index={index}>
-                <ArticleCard post={post} />
-              </FadeInItem>
+            {latest.map((post) => (
+              <ArticleCard key={post.slug} post={post} />
             ))}
           </div>
         </div>
@@ -119,8 +115,6 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-
-      <Newsletter />
     </>
   );
 }

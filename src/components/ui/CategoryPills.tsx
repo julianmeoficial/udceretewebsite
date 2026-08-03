@@ -1,5 +1,12 @@
 "use client";
 
+/**
+ * Filtros horizontales tipo píldora.
+ *
+ * @mvp UX provisional: sobreusado en admin y páginas públicas.
+ * Tras feedback UX, limitar a filtros públicos o sustituir por radios /
+ * segmented controls institucionales (sin forma de píldora masiva).
+ */
 import styles from "./CategoryPills.module.css";
 
 export type PillOption = {

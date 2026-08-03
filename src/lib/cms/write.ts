@@ -1,5 +1,13 @@
 "use server";
 
+/**
+ * Escritura CMS file-based (MVP).
+ *
+ * @remarks
+ * Solo para demos: `writeFile` directo, sin bloqueo ni transacciones.
+ * En producción reemplazar por mutaciones atómicas en BD/CMS.
+ */
+
 import { writeFile } from "fs/promises";
 import path from "path";
 import type {

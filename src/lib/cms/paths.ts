@@ -1,3 +1,7 @@
+/**
+ * Rutas y nombres de archivos del CMS JSON local.
+ * Conservar como mapa de colecciones al migrar a BD.
+ */
 import path from "path";
 
 export const CMS_DIR = path.join(process.cwd(), "src/data/cms");

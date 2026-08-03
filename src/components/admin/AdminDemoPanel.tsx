@@ -1,5 +1,10 @@
 "use client";
 
+/**
+ * @mvp Acceso rápido al panel sin auth real.
+ * Conservar solo mientras dure la validación UX; eliminar al integrar
+ * login institucional (Supabase / Magic Link / SSO).
+ */
 import { useState } from "react";
 import { signInDemoCentroAdmin, signInDemoSuperadmin } from "@/lib/auth/actions";
 import styles from "./AdminDemoPanel.module.css";

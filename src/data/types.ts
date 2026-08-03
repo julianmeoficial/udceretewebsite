@@ -1,3 +1,7 @@
+/**
+ * Modelo de dominio canónico del portal.
+ * Preservar estas shapes al migrar CMS/auth; son el contrato entre capas.
+ */
 export type Category =
   | "Académico"
   | "Trámites"

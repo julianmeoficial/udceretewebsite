@@ -1,3 +1,11 @@
+/**
+ * CMS file-based (MVP).
+ *
+ * Persistencia JSON bajo `src/data/cms/`. El contrato de lectura
+ * (`readCms*`, `toPublicPost`, `getPublishedPosts`) es reutilizable:
+ * en producción sustituye el cuerpo por un adaptador a BD/CMS real
+ * manteniendo las mismas firmas hacia `lib/posts` y las pages.
+ */
 import { readFile } from "fs/promises";
 import path from "path";
 import { posts as fallbackPosts } from "@/data/posts";
@@ -87,14 +95,13 @@ export async function readCmsSite(): Promise<typeof siteConfig> {
   return readJsonFile(CMS_FILES.site, siteConfig);
 }
 
+/** Proyecta un registro CMS a la forma pública `Post` del front. */
 export function toPublicPost(post: CmsPost) {
-  const {
-    id: _id,
-    status: _status,
-    updatedAt: _updatedAt,
-    createdBy: _createdBy,
-    ...publicFields
-  } = post;
+  const { id, status, updatedAt, createdBy, ...publicFields } = post;
+  void id;
+  void status;
+  void updatedAt;
+  void createdBy;
   return publicFields;
 }
 

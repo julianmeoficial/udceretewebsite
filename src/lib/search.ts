@@ -1,3 +1,9 @@
+/**
+ * Búsqueda client-side normalizada (sin acentos).
+ *
+ * Suficiente para el MVP. En producción encapsular detrás de un adaptador
+ * (Meilisearch, API, etc.) manteniendo estas firmas en el front.
+ */
 import type { CalendarEvent, Post, Resource } from "@/data/types";
 
 function normalize(value: string): string {

@@ -1,7 +1,14 @@
+/**
+ * Formateo APA 7 / Vancouver.
+ *
+ * Conservar: `formatApa7`, `formatVancouver`, `formatCitation`.
+ * Descartar: `demoCitations` / resolución DOI mock — sustituir por citeproc.
+ */
 import type { CitationMetadata } from "@/data/types";
 
 export type CitationStyle = "apa7" | "vancouver";
 
+/** @mvp Metadatos de ejemplo para el generador. */
 export const demoCitations: Record<string, CitationMetadata> = {
   "10.1037/0000165-000": {
     authors: ["American Psychological Association"],

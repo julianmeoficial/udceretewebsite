@@ -1,3 +1,7 @@
+/**
+ * Invalidación de rutas públicas tras mutaciones CMS.
+ * Reutilizable con cualquier backend que dispare los mismos paths.
+ */
 import { revalidatePath } from "next/cache";
 
 export function revalidatePublicPosts(slug?: string) {

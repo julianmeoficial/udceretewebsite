@@ -1,5 +1,10 @@
 "use client";
 
+/**
+ * @mvp Comentarios en `localStorage` (por dispositivo).
+ * Recrear con auth + persistencia real tras el feedback UX.
+ * La mecánica de `useSyncExternalStore` + cache de snapshot sí es reutilizable.
+ */
 import { FormEvent, useCallback, useSyncExternalStore, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { TextAreaField, TextField } from "@/components/ui/Input";
@@ -28,18 +33,41 @@ function storageKey(slug: string): string {
   return `udc-comments-${slug}`;
 }
 
+const EMPTY_COMMENTS: Comment[] = [];
+
+type SnapshotCache = { raw: string | null; value: Comment[] };
+const snapshotCache = new Map<string, SnapshotCache>();
+
 function loadComments(slug: string): Comment[] {
-  if (typeof window === "undefined") return [];
+  if (typeof window === "undefined") return EMPTY_COMMENTS;
+
+  let raw: string | null;
   try {
-    const raw = localStorage.getItem(storageKey(slug));
-    return raw ? (JSON.parse(raw) as Comment[]) : [];
+    raw = localStorage.getItem(storageKey(slug));
   } catch {
-    return [];
+    return EMPTY_COMMENTS;
   }
+
+  const cached = snapshotCache.get(slug);
+  if (cached && cached.raw === raw) return cached.value;
+
+  let value: Comment[] = EMPTY_COMMENTS;
+  if (raw) {
+    try {
+      value = JSON.parse(raw) as Comment[];
+    } catch {
+      value = EMPTY_COMMENTS;
+    }
+  }
+
+  snapshotCache.set(slug, { raw, value });
+  return value;
 }
 
 function saveComments(slug: string, comments: Comment[]): void {
-  localStorage.setItem(storageKey(slug), JSON.stringify(comments));
+  const raw = JSON.stringify(comments);
+  localStorage.setItem(storageKey(slug), raw);
+  snapshotCache.set(slug, { raw, value: comments });
 }
 
 function formatWhen(iso: string): string {
@@ -57,21 +85,18 @@ function subscribe(onStoreChange: () => void): () => void {
   return () => window.removeEventListener("storage", onStoreChange);
 }
 
+function getServerSnapshot(): Comment[] {
+  return EMPTY_COMMENTS;
+}
+
 function useStoredComments(slug: string): [Comment[], (next: Comment[]) => void] {
   const getSnapshot = useCallback(() => loadComments(slug), [slug]);
 
-  const stored = useSyncExternalStore(
-    subscribe,
-    getSnapshot,
-    () => [],
-  );
-
-  const [, setRevision] = useState(0);
+  const stored = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const persist = useCallback(
     (next: Comment[]) => {
       saveComments(slug, next);
-      setRevision((value) => value + 1);
       window.dispatchEvent(new Event("storage"));
     },
     [slug],

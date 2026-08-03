@@ -1,3 +1,9 @@
+/**
+ * Lectura y construcción de sesión.
+ *
+ * Conservar: `getSession` / `requireSession` (parseo + expiración).
+ * Descartar en producción: `buildSession` (emite sesión demo sin identidad).
+ */
 import { cookies } from "next/headers";
 import type { UserRole } from "@/data/types";
 import {
@@ -30,6 +36,7 @@ export async function requireSession(): Promise<SessionUser> {
   return session;
 }
 
+/** @mvp Emite una sesión demo a partir del rol. Sustituir por login real. */
 export function buildSession(role: UserRole): SessionUser {
   const demo = DEMO_USERS[role];
   return {

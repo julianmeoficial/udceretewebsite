@@ -1,3 +1,9 @@
+/**
+ * Protección de `/admin/*`.
+ *
+ * Exige cookie de sesión válida; restringe usuarios/ajustes a superadmin.
+ * Conservar el patrón de matcher + redirect al migrar a auth real.
+ */
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { SESSION_COOKIE } from "@/lib/auth/types";

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { Extension } from "@tiptap/core";
 import { EditorContent, useEditor } from "@tiptap/react";
@@ -133,12 +133,8 @@ function buildShortcutGroups(os: OsKind) {
 export function ArticleEditor({ value, onChange, id = "article-body" }: Props) {
   const rootRef = useRef<HTMLDivElement>(null);
   const [hintsOpen, setHintsOpen] = useState(false);
-  const [os, setOs] = useState<OsKind>("windows");
+  const [os] = useState<OsKind>(() => detectOs());
   const [stats, setStats] = useState({ words: 0, characters: 0 });
-
-  useEffect(() => {
-    setOs(detectOs());
-  }, []);
 
   const shortcutGroups = useMemo(() => buildShortcutGroups(os), [os]);
   const modLabel = os === "mac" ? "⌘" : "Ctrl";
@@ -504,11 +500,11 @@ function ShortcutsPopup({
 }) {
   const overlayRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
   useGSAP(
     () => {

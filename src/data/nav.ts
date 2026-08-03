@@ -1,5 +1,6 @@
 import type { NavItem } from "./types";
 
+/** Navegación principal. Ajustar tras hallazgos de IA/navegación en pruebas UX. */
 export const mainNav: NavItem[] = [
   { label: "Inicio", href: "/" },
   { label: "Blog", href: "/archivo" },
@@ -31,10 +32,10 @@ export const quickLinks = [
     icon: "calendar",
   },
   {
-    label: "Preguntar a la IA",
+    label: "Buscar en el sitio",
     href: "/buscar",
-    description: "Respuestas con fuentes",
-    icon: "ai",
+    description: "Artículos, recursos y fechas",
+    icon: "search",
   },
   {
     label: "Generador de citas",

@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * @mvp Flujo Magic Link simulado + panel demo.
+ * Validar copy y fricción de acceso; recrear con auth institucional real.
+ */
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { Button } from "@/components/ui/Button";
