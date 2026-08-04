@@ -8,18 +8,16 @@ Portal académico y blog editorial del **Centro Tutorial Cereté** (Universidad 
 
 ---
 
-## Documentación
+## Docs (MVP)
 
 | Documento | Para qué |
 |-----------|----------|
-| [docs/](./docs/README.md) | Índice completo |
-| [Estrategia MVP y frontera API](./docs/strategy/mvp-and-api-boundary.md) | ¿Microservicio o monolito? (decisión diferida; criterio para apps) |
-| [Fases de producto](./docs/strategy/product-phases.md) | UX → web estable → diseño apps → build |
-| [Arquitectura](./docs/architecture/overview.md) | Capas del sistema |
-| [Conservar vs descartar](./docs/architecture/keep-vs-discard.md) | Qué reutilizar del MVP |
-| [CONTRIBUTING](./CONTRIBUTING.md) | Cómo contribuir |
-| [CHANGELOG](./CHANGELOG.md) | Historial de cambios |
-| [ADR-0001](./docs/decisions/0001-api-boundary-deferred.md) | Frontera API diferida |
+| [docs/mvp-strategy.md](./docs/mvp-strategy.md) | Estrategia del MVP y cuándo decidir API monolito vs microservicio |
+| [CONTRIBUTING.md](./CONTRIBUTING.md) | Cómo contribuir |
+| [CHANGELOG.md](./CHANGELOG.md) | Historial de cambios |
+| [`.cursorrules`](./.cursorrules) | Design system y reglas de producto |
+
+La documentación oficial del sitio se creará al pasar a producción.
 
 ---
 
@@ -77,7 +75,7 @@ Abre [http://localhost:3000](http://localhost:3000).
 
 ---
 
-## Estructura (resumen)
+## Estructura
 
 ```
 src/
@@ -86,48 +84,38 @@ src/
 ├── data/           # Tipos, seeds, cms JSON
 ├── lib/            # auth, cms, content, citations, calendar, utils
 ├── styles/         # Design tokens
-└── middleware.ts   # Guardas /admin
+└── middleware.ts
 ```
-
-Detalle: [docs/architecture/codebase.md](./docs/architecture/codebase.md).
 
 ---
 
 ## Principios
 
 1. Institucional y editorial — no look “AI-generated”.
-2. Cada pantalla tiene una tarea real de estudiante o staff.
+2. Cada pantalla tiene una tarea real.
 3. Mobile-first; copy público en español.
-4. Oro dominante / night para contraste — solo tokens.
-5. Inter; lectura máx. `680px`; contenido desktop máx. `1200px`.
-
-Reglas completas: [`.cursorrules`](./.cursorrules).
+4. Oro dominante / night — solo tokens.
+5. Inter; lectura máx. `680px`; desktop máx. `1200px`.
 
 ---
 
 ## Cómo testear UX
 
-1. Encontrar un aviso reciente (portada o archivo).
+1. Encontrar un aviso reciente.
 2. Consultar una fecha y exportar `.ics` si aplica.
 3. Descargar un recurso de su programa.
 4. Generar una cita APA o Vancouver.
 5. Localizar una ruta de bienestar.
-6. *(Staff)* Entrar por `/acceso` → `[admin test]` y editar un aviso.
-
-Anota fricción y copy confuso: eso prioriza la versión estable.
+6. *(Staff)* `/acceso` → `[admin test]` y editar un aviso.
 
 ---
 
 ## Fuera de alcance (ahora)
 
-- CMS / auth de producción
-- Microservicio API (ver [estrategia](./docs/strategy/mvp-and-api-boundary.md))
-- Apps nativas (Fase 2–3)
-- PWA endurecida y observabilidad completa
+CMS/auth de producción, microservicio API, apps nativas. Criterio: [docs/mvp-strategy.md](./docs/mvp-strategy.md).
 
 ---
 
 ## Referencias
 
 - Blog legado: [ctcerete.blogspot.com](https://ctcerete.blogspot.com/)
-- Design system: documentación interna (Notion — Blog UDEC Cereté)

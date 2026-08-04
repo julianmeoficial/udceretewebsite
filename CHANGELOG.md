@@ -9,10 +9,9 @@ y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/) c
 
 ### Added
 
-- Carpeta `docs/` con estrategia MVP, arquitectura, fases de producto y ADRs.
-- `CONTRIBUTING.md` y este `CHANGELOG.md`.
+- `docs/mvp-strategy.md` — estrategia del MVP y frontera API (decisión diferida).
+- `CONTRIBUTING.md` y `CHANGELOG.md`.
 - Organización de `src/lib` en capas: `content/`, `citations/`, `calendar/`, `utils/` (además de `auth/`, `cms/`).
-- Documentación local en `src/lib/README.md` y `src/data/README.md`.
 
 ### Changed
 
@@ -24,6 +23,7 @@ y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/) c
 
 - `lib/ai-demo`, `GlassSelect`, `Newsletter`, `FadeInItem`.
 - Dependencia `motion`.
+- Documentación MVP excesiva (ADRs, architecture/, READMEs de carpetas); se retomará en producción.
 
 ### Fixed
 
