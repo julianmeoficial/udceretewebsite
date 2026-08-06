@@ -31,12 +31,14 @@ npm run build
 |------|----------|
 | UI copy | Español |
 | Estilos | CSS Modules + tokens; sin HEX sueltos |
-| Dominio | Lógica en `src/lib/**`; UI delgada |
+| Dominio | Lógica y UI de feature en `src/features/<dominio>/` |
+| UI compartida | `src/components/ui` y `src/components/layout` |
 | Persistencia | Solo vía `src/lib/cms/*` |
 | Auth demo | No tratar `signInDemo*` como producción |
 | IA | No reintroducir mocks engañosos |
 
-`src/lib`: `auth/`, `cms/`, `content/`, `citations/`, `calendar/`, `utils/`.
+`src/features`: `blog/`, `calendar/`, `resources/`, `wellbeing/`, `citations/`, `admin/`.  
+`src/lib`: `auth/`, `cms/`, `utils/`.
 
 ## Fuera de alcance (MVP)
 

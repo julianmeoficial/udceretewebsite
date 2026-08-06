@@ -7,12 +7,12 @@ import {
   HeartIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
-import { ArticleCard } from "@/components/blog/ArticleCard";
-import { FeaturedHero } from "@/components/blog/FeaturedHero";
+import { ArticleCard } from "@/features/blog/components/ArticleCard";
+import { FeaturedHero } from "@/features/blog/components/FeaturedHero";
 import { calendarEvents } from "@/data/calendar";
 import { quickLinks } from "@/data/nav";
 import { formatShortDate } from "@/lib/utils/format";
-import { getAllPosts, getFeaturedPost } from "@/lib/content/posts";
+import { getAllPosts, getFeaturedPost } from "@/features/blog/lib/posts";
 import styles from "./page.module.css";
 
 const quickIcons = {

@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
-import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
-import { PostForm } from "@/components/admin/PostForm";
-import { deletePost, getPostForEdit, updatePost } from "../../actions";
+import { AdminPageHeader } from "@/features/admin/components/AdminPageHeader";
+import { PostForm } from "@/features/blog/components/PostForm";
+import { deletePost, getPostForEdit, updatePost } from "@/features/blog/actions";
 
 type Props = {
   params: Promise<{ id: string }>;

@@ -12,8 +12,11 @@ y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/) c
 - `docs/mvp-strategy.md` — estrategia del MVP y frontera API (decisión diferida).
 - `CONTRIBUTING.md` y `CHANGELOG.md`.
 - Organización de `src/lib` en capas: `content/`, `citations/`, `calendar/`, `utils/` (además de `auth/`, `cms/`).
+- Reorganización por features en `src/features/` (`blog`, `calendar`, `resources`, `wellbeing`, `citations`, `admin`).
 
 ### Changed
+
+- Código de dominio movido de `components/*` y `lib/content` a `src/features/*`; `app/` queda como capa de rutas.
 
 - `/buscar` solo búsqueda del sitio (sin modo IA demo).
 - Acceso rápido de portada: “Buscar en el sitio” en lugar de “Preguntar a la IA”.

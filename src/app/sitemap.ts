@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllPosts } from "@/lib/content/posts";
+import { getAllPosts } from "@/features/blog/lib/posts";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = "https://ctcerete.udec.edu.co";

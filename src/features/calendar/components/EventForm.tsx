@@ -5,9 +5,9 @@ import { CategoryPills } from "@/components/ui/CategoryPills";
 import { Button } from "@/components/ui/Button";
 import { TextAreaField, TextField } from "@/components/ui/Input";
 import type { CalendarEvent, Category } from "@/data/types";
-import { BLOG_CATEGORIES } from "@/lib/content/posts-shared";
-import { ConfirmBar } from "./ConfirmBar";
-import styles from "./ResourceForm.module.css";
+import { BLOG_CATEGORIES } from "@/features/blog/lib/posts-shared";
+import { ConfirmBar } from "@/features/admin/components/ConfirmBar";
+import styles from "@/features/resources/components/ResourceForm.module.css";
 
 type Input = {
   title: string;

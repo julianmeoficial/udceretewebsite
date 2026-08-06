@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
-import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
-import { ResourceForm } from "@/components/admin/ResourceForm";
-import { getResourceById, updateResource, deleteResource } from "../../actions";
+import { AdminPageHeader } from "@/features/admin/components/AdminPageHeader";
+import { ResourceForm } from "@/features/resources/components/ResourceForm";
+import { getResourceById, updateResource, deleteResource } from "@/features/resources/actions";
 
 type Props = {
   params: Promise<{ id: string }>;

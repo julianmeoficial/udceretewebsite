@@ -12,7 +12,7 @@ import {
 import { revalidatePublicPosts } from "@/lib/cms/revalidate";
 import { createId, slugify } from "@/lib/cms/utils";
 import { writeCmsPosts } from "@/lib/cms/write";
-import { FEATURED_TAGS } from "@/lib/content/posts-shared";
+import { FEATURED_TAGS } from "@/features/blog/lib/posts-shared";
 import { DEFAULT_AUTHOR } from "@/data/authors";
 
 type PostInput = {

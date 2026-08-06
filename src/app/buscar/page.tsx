@@ -16,7 +16,7 @@ import {
   searchPosts,
   searchResources,
   searchTramites,
-} from "@/lib/content/search";
+} from "@/features/blog/lib/search";
 import styles from "./page.module.css";
 
 /**

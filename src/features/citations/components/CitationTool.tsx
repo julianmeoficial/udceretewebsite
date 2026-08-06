@@ -11,7 +11,7 @@ import {
   formatCitation,
   resolveDemoDoi,
   type CitationStyle,
-} from "@/lib/citations/citation";
+} from "@/features/citations/lib/citation";
 import styles from "./CitationTool.module.css";
 
 const emptyMeta: CitationMetadata = {

@@ -8,7 +8,7 @@ import { TextAreaField, TextField } from "@/components/ui/Input";
 import { ACADEMIC_PROGRAMS } from "@/data/programs";
 import type { Program, Resource, ResourceType } from "@/data/types";
 import { detectFileFormat, formatBytes } from "@/lib/utils/files";
-import { ConfirmBar } from "./ConfirmBar";
+import { ConfirmBar } from "@/features/admin/components/ConfirmBar";
 import styles from "./ResourceForm.module.css";
 
 const TYPES: ResourceType[] = ["guía", "formato", "plantilla"];

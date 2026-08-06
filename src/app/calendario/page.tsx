@@ -3,13 +3,13 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, Download } from "lucide-react";
-import { AcademicScheduleTables } from "@/components/calendar/AcademicScheduleTables";
+import { AcademicScheduleTables } from "@/features/calendar/components/AcademicScheduleTables";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { calendarEvents } from "@/data/calendar";
 import { formatDate } from "@/lib/utils/format";
-import { buildIcs, downloadIcs } from "@/lib/calendar/ics";
+import { buildIcs, downloadIcs } from "@/features/calendar/lib/ics";
 import styles from "./page.module.css";
 
 const weekdays = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];

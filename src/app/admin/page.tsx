@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
+import { AdminPageHeader } from "@/features/admin/components/AdminPageHeader";
 import { Button } from "@/components/ui/Button";
 import { readCmsEvents, readCmsPosts } from "@/lib/cms/read";
 import { formatShortDate } from "@/lib/utils/format";

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { TextAreaField, TextField } from "@/components/ui/Input";
 import { alertTopics } from "@/data/wellbeing";
 import type { SupportRoute, Testimonial } from "@/data/types";
-import styles from "./page.module.css";
+import styles from "./WellbeingPageContent.module.css";
 
 type Props = {
   supportRoutes: SupportRoute[];

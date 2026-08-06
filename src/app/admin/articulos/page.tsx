@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { AdminEmptyState } from "@/components/admin/AdminEmptyState";
-import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
-import { AdminTable } from "@/components/admin/AdminTable";
+import { AdminEmptyState } from "@/features/admin/components/AdminEmptyState";
+import { AdminPageHeader } from "@/features/admin/components/AdminPageHeader";
+import { AdminTable } from "@/features/admin/components/AdminTable";
 import { Button } from "@/components/ui/Button";
 import type { CmsPost } from "@/data/types";
 import { isFutureDate, todayISO } from "@/lib/utils/dates";
 import { formatShortDate } from "@/lib/utils/format";
-import { getAllPostsForAdmin } from "@/lib/content/posts";
+import { getAllPostsForAdmin } from "@/features/blog/lib/posts";
 import styles from "./page.module.css";
 
 function statusLabel(post: CmsPost): string {

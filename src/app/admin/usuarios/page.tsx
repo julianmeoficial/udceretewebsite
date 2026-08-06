@@ -1,6 +1,6 @@
-import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
-import { UsersManager } from "@/components/admin/UsersManager";
-import { getUsers, updateUser } from "./actions";
+import { AdminPageHeader } from "@/features/admin/components/AdminPageHeader";
+import { UsersManager } from "@/features/admin/components/UsersManager";
+import { getUsers, updateUser } from "@/features/admin/actions/users";
 
 export default async function AdminUsersPage() {
   const users = await getUsers();

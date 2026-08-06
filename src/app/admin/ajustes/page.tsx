@@ -1,6 +1,6 @@
-import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
-import { SiteSettingsForm } from "@/components/admin/SiteSettingsForm";
-import { getSiteSettings, updateSiteSettings } from "./actions";
+import { AdminPageHeader } from "@/features/admin/components/AdminPageHeader";
+import { SiteSettingsForm } from "@/features/admin/components/SiteSettingsForm";
+import { getSiteSettings, updateSiteSettings } from "@/features/admin/actions/settings";
 
 export default async function AdminSettingsPage() {
   const settings = await getSiteSettings();

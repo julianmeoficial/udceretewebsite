@@ -79,10 +79,11 @@ Abre [http://localhost:3000](http://localhost:3000).
 
 ```
 src/
-├── app/            # Rutas
-├── components/     # UI por dominio
+├── app/            # Rutas (capa delgada)
+├── components/     # UI compartida (ui, layout)
+├── features/       # Dominios: blog, calendar, resources, wellbeing, citations, admin
 ├── data/           # Tipos, seeds, cms JSON
-├── lib/            # auth, cms, content, citations, calendar, utils
+├── lib/            # auth, cms, utils (infra compartida)
 ├── styles/         # Design tokens
 └── middleware.ts
 ```

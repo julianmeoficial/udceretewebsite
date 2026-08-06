@@ -3,7 +3,7 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { ArticleCard } from "@/components/blog/ArticleCard";
+import { ArticleCard } from "@/features/blog/components/ArticleCard";
 import { CategoryPills } from "@/components/ui/CategoryPills";
 import { SelectField } from "@/components/ui/Input";
 import type { Post } from "@/data/types";
@@ -12,8 +12,8 @@ import {
   getCategories,
   getPostTags,
   type PostSort,
-} from "@/lib/content/posts-shared";
-import styles from "./page.module.css";
+} from "@/features/blog/lib/posts-shared";
+import styles from "./ArchivePageContent.module.css";
 
 type Props = {
   initialPosts: Post[];

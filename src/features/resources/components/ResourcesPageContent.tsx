@@ -2,12 +2,12 @@
 
 import { useMemo, useState } from "react";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
-import { CitationTool } from "@/components/citations/CitationTool";
+import { CitationTool } from "@/features/citations/components/CitationTool";
 import { CategoryPills } from "@/components/ui/CategoryPills";
 import { Button } from "@/components/ui/Button";
 import type { Resource, ResourceType } from "@/data/types";
 import { formatShortDate } from "@/lib/utils/format";
-import styles from "./page.module.css";
+import styles from "./ResourcesPageContent.module.css";
 
 const typeLabels: Record<ResourceType, string> = {
   guía: "Guías",

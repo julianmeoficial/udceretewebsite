@@ -1,6 +1,6 @@
-import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
-import { PostForm } from "@/components/admin/PostForm";
-import { createPost } from "../actions";
+import { AdminPageHeader } from "@/features/admin/components/AdminPageHeader";
+import { PostForm } from "@/features/blog/components/PostForm";
+import { createPost } from "@/features/blog/actions";
 
 export default function NewArticlePage() {
   return (

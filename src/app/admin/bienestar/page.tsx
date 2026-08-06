@@ -1,6 +1,6 @@
-import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
-import { WellbeingEditor } from "@/components/admin/WellbeingEditor";
-import { getWellbeingData, updateWellbeing } from "./actions";
+import { AdminPageHeader } from "@/features/admin/components/AdminPageHeader";
+import { WellbeingEditor } from "@/features/wellbeing/components/WellbeingEditor";
+import { getWellbeingData, updateWellbeing } from "@/features/wellbeing/actions";
 
 export default async function AdminWellbeingPage() {
   const data = await getWellbeingData();

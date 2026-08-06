@@ -1,4 +1,4 @@
-import { CitationTool } from "@/components/citations/CitationTool";
+import { CitationTool } from "@/features/citations/components/CitationTool";
 import styles from "./page.module.css";
 
 export default function CitationPage() {

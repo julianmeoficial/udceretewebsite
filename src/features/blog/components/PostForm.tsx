@@ -7,13 +7,13 @@ import { Button } from "@/components/ui/Button";
 import { TextAreaField, TextField } from "@/components/ui/Input";
 import { DEFAULT_AUTHOR, EDITORIAL_AUTHORS } from "@/data/authors";
 import type { CmsPost, PostStatus, Category } from "@/data/types";
-import { BLOG_CATEGORIES, FEATURED_TAGS } from "@/lib/content/posts-shared";
+import { BLOG_CATEGORIES, FEATURED_TAGS } from "@/features/blog/lib/posts-shared";
 import { slugify } from "@/lib/cms/utils";
 import { isFutureDate, todayISO } from "@/lib/utils/dates";
 import { ArticleEditor } from "./ArticleEditor";
 import { PublishDatePicker, type PublishMode } from "./PublishDatePicker";
-import { StatusPills } from "./StatusPills";
-import { ConfirmBar } from "./ConfirmBar";
+import { ConfirmBar } from "@/features/admin/components/ConfirmBar";
+import { StatusPills } from "@/features/admin/components/StatusPills";
 import styles from "./PostForm.module.css";
 
 type Props = {

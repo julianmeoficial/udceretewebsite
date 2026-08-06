@@ -1,6 +1,6 @@
-import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
-import { ResourceForm } from "@/components/admin/ResourceForm";
-import { createResource } from "../actions";
+import { AdminPageHeader } from "@/features/admin/components/AdminPageHeader";
+import { ResourceForm } from "@/features/resources/components/ResourceForm";
+import { createResource } from "@/features/resources/actions";
 
 export default function NewResourcePage() {
   return (

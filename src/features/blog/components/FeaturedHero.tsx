@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import type { Post } from "@/data/types";
 import { formatShortDate } from "@/lib/utils/format";
-import { getReadingTime } from "@/lib/content/reading-time";
+import { getReadingTime } from "@/features/blog/lib/reading-time";
 import styles from "./FeaturedHero.module.css";
 
 gsap.registerPlugin(useGSAP);

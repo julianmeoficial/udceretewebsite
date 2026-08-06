@@ -7,7 +7,7 @@
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { Button } from "@/components/ui/Button";
-import { AdminDemoPanel } from "@/components/admin/AdminDemoPanel";
+import { AdminDemoPanel } from "@/features/admin/components/AdminDemoPanel";
 import styles from "./page.module.css";
 
 type Step = "idle" | "sent";

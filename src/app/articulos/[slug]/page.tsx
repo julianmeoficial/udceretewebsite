@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArticleCard } from "@/components/blog/ArticleCard";
-import { ArticleComments } from "@/components/blog/ArticleComments";
-import { ReadingProgress } from "@/components/blog/ReadingProgress";
-import { TagList } from "@/components/blog/TagList";
+import { ArticleCard } from "@/features/blog/components/ArticleCard";
+import { ArticleComments } from "@/features/blog/components/ArticleComments";
+import { ReadingProgress } from "@/features/blog/components/ReadingProgress";
+import { TagList } from "@/features/blog/components/TagList";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Badge } from "@/components/ui/Badge";
 import { siteConfig } from "@/data/site";
 import { formatDate } from "@/lib/utils/format";
-import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/content/posts";
-import { getReadingTime } from "@/lib/content/reading-time";
+import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/features/blog/lib/posts";
+import { getReadingTime } from "@/features/blog/lib/reading-time";
 import styles from "./page.module.css";
 
 type Props = {

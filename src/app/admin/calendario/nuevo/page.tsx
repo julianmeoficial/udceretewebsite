@@ -1,6 +1,6 @@
-import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
-import { EventForm } from "@/components/admin/EventForm";
-import { createEvent } from "../actions";
+import { AdminPageHeader } from "@/features/admin/components/AdminPageHeader";
+import { EventForm } from "@/features/calendar/components/EventForm";
+import { createEvent } from "@/features/calendar/actions";
 
 export default function NewEventPage() {
   return (

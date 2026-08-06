@@ -1,7 +1,7 @@
 import { Suspense } from "react";
-import { getAllPosts } from "@/lib/content/posts";
-import { ArchivePageContent } from "./ArchivePageContent";
-import styles from "./page.module.css";
+import { getAllPosts } from "@/features/blog/lib/posts";
+import { ArchivePageContent } from "@/features/blog/components/ArchivePageContent";
+import styles from "@/features/blog/components/ArchivePageContent.module.css";
 
 export default async function ArchivePage() {
   const posts = await getAllPosts();

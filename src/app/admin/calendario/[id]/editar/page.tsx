@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
-import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
-import { EventForm } from "@/components/admin/EventForm";
-import { getEventById, updateEvent, deleteEvent } from "../../actions";
+import { AdminPageHeader } from "@/features/admin/components/AdminPageHeader";
+import { EventForm } from "@/features/calendar/components/EventForm";
+import { getEventById, updateEvent, deleteEvent } from "@/features/calendar/actions";
 
 type Props = {
   params: Promise<{ id: string }>;
