@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getFeaturedTags } from "@/features/blog/lib/posts";
+import { getFeaturedTags } from "@/features/blog/lib/posts-shared";
 import styles from "./TagList.module.css";
 
 type Props = {

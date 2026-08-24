@@ -22,7 +22,7 @@ type Props = {
   onDelete?: () => Promise<{ error?: string } | void>;
 };
 
-export type FormValues = {
+type FormValues = {
   title: string;
   slug: string;
   excerpt: string;

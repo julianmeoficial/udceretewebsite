@@ -3,7 +3,7 @@
 /**
  * Server actions de autenticación.
  *
- * Conservar: `signOut`, `getCurrentUser`.
+ * Conservar: `signOut`.
  * Descartar en producción: `signInDemo*` (entrada sin verificación).
  */
 
@@ -12,10 +12,8 @@ import { redirect } from "next/navigation";
 import type { UserRole } from "@/data/types";
 import { SESSION_COOKIE } from "./types";
 import { buildSession } from "./session";
-import { getSession } from "./session";
 
-/** @mvp Login simulado por rol. */
-export async function signInDemo(role: UserRole, next = "/admin") {
+async function signInDemo(role: UserRole, next = "/admin") {
   const session = buildSession(role);
   const cookieStore = await cookies();
   cookieStore.set(SESSION_COOKIE, JSON.stringify(session), {
@@ -42,8 +40,4 @@ export async function signInDemoSuperadmin() {
 /** @mvp */
 export async function signInDemoCentroAdmin() {
   return signInDemo("centro_admin");
-}
-
-export async function getCurrentUser() {
-  return getSession();
 }

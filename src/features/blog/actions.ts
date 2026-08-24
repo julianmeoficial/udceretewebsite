@@ -6,7 +6,6 @@ import { canManageContent } from "@/lib/auth/permissions";
 import { requireSession } from "@/lib/auth/session";
 import {
   getCmsPostById,
-  getCmsPostBySlugAny,
   readCmsPosts,
 } from "@/lib/cms/read";
 import { revalidatePublicPosts } from "@/lib/cms/revalidate";
@@ -140,8 +139,4 @@ export async function deletePost(id: string) {
 
 export async function getPostForEdit(id: string) {
   return getCmsPostById(id);
-}
-
-export async function getPostForEditBySlug(slug: string) {
-  return getCmsPostBySlugAny(slug);
 }

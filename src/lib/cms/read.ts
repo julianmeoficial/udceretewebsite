@@ -39,21 +39,7 @@ export async function readCmsPosts(): Promise<CmsPost[]> {
 }
 
 export async function readCmsResources(): Promise<Resource[]> {
-  const raw = await readJsonFile<Array<Resource & { program?: string }>>(
-    CMS_FILES.resources,
-    [],
-  );
-  return raw.map((item) => {
-    const { program, ...rest } = item;
-    const existing = Array.isArray(rest.programs) ? rest.programs : [];
-    const programs =
-      existing.length > 0
-        ? existing
-        : program
-          ? [program as Resource["programs"][number]]
-          : (["General"] as Resource["programs"]);
-    return { ...rest, programs };
-  });
+  return readJsonFile<Resource[]>(CMS_FILES.resources, []);
 }
 
 export async function readCmsEvents(): Promise<CalendarEvent[]> {
@@ -125,9 +111,4 @@ export async function getPublishedPostBySlug(slug: string) {
 export async function getCmsPostById(id: string) {
   const all = await readCmsPosts();
   return all.find((post) => post.id === id);
-}
-
-export async function getCmsPostBySlugAny(slug: string) {
-  const all = await readCmsPosts();
-  return all.find((post) => post.slug === slug);
 }

@@ -56,7 +56,7 @@ export function TextAreaField({
   );
 }
 
-export type SelectOption = {
+type SelectOption = {
   value: string;
   label: string;
 };

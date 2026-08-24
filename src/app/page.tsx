@@ -9,7 +9,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { ArticleCard } from "@/features/blog/components/ArticleCard";
 import { FeaturedHero } from "@/features/blog/components/FeaturedHero";
-import { calendarEvents } from "@/data/calendar";
+import { calendarEvents, formatScheduleDay } from "@/data/calendar";
 import { quickLinks } from "@/data/nav";
 import { formatShortDate } from "@/lib/utils/format";
 import { getAllPosts, getFeaturedPost } from "@/features/blog/lib/posts";
@@ -22,13 +22,6 @@ const quickIcons = {
   folder: FolderIcon,
   heart: HeartIcon,
 } as const;
-
-function formatEventDate(iso: string): string {
-  const date = new Date(`${iso}T12:00:00`);
-  const day = date.getDate();
-  const month = date.toLocaleDateString("es-CO", { month: "short" }).replace(".", "");
-  return `${day} ${month}`;
-}
 
 export default async function HomePage() {
   const featured = (await getFeaturedPost())!;
@@ -102,7 +95,7 @@ export default async function HomePage() {
           <div className={styles.events}>
             {upcoming.map((event) => (
               <article key={event.id} className={styles.event}>
-                <div className={styles.eventDate}>{formatEventDate(event.date)}</div>
+                <div className={styles.eventDate}>{formatScheduleDay(event.date)}</div>
                 <div>
                   <h3 className={styles.eventTitle}>{event.title}</h3>
                   <p className={styles.eventDesc}>

@@ -9,7 +9,7 @@
  */
 import styles from "./CategoryPills.module.css";
 
-export type PillOption = {
+type PillOption = {
   value: string;
   label: string;
 };

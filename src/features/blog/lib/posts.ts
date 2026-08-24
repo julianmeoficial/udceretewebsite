@@ -8,19 +8,6 @@ import {
   getPublishedPosts,
   readCmsPosts,
 } from "@/lib/cms/read";
-import {
-  filterPostsList,
-  type PostSort,
-} from "@/features/blog/lib/posts-shared";
-
-export {
-  BLOG_CATEGORIES,
-  FEATURED_TAGS,
-  getCategories,
-  getFeaturedTags,
-  filterPostsList,
-  type PostSort,
-} from "@/features/blog/lib/posts-shared";
 
 export async function getAllPosts(): Promise<Post[]> {
   const posts = await getPublishedPosts();
@@ -43,22 +30,6 @@ export async function getRelatedPosts(post: Post, limit = 3): Promise<Post[]> {
   return posts
     .filter((item) => item.slug !== post.slug && item.category === post.category)
     .slice(0, limit);
-}
-
-export async function filterPosts(options: {
-  category?: string;
-  month?: string;
-  tag?: string;
-  query?: string;
-  sort?: PostSort;
-}): Promise<Post[]> {
-  return filterPostsList(await getAllPosts(), options);
-}
-
-export async function getPostMonths(): Promise<string[]> {
-  const posts = await getAllPosts();
-  const months = new Set(posts.map((post) => post.publishedAt.slice(0, 7)));
-  return Array.from(months).sort().reverse();
 }
 
 export async function getAllPostsForAdmin() {
