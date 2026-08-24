@@ -12,12 +12,15 @@ Portal académico y blog editorial del **Centro Tutorial Cereté** (Universidad 
 
 | Documento | Para qué |
 |-----------|----------|
+| [docs/README.md](./docs/README.md) | **Índice** — diseño, arquitectura y diagramas del MVP |
+| [docs/design/](./docs/design/) | Identidad, colores, tipografía y layout |
+| [docs/arquitectura/](./docs/arquitectura/) | Stack, funciones, datos, auth y flujos |
 | [docs/mvp-strategy.md](./docs/mvp-strategy.md) | Estrategia del MVP y cuándo decidir API monolito vs microservicio |
 | [CONTRIBUTING.md](./CONTRIBUTING.md) | Cómo contribuir |
 | [CHANGELOG.md](./CHANGELOG.md) | Historial de cambios |
-| [`.cursorrules`](./.cursorrules) | Design system y reglas de producto |
+| [`.cursorrules`](./.cursorrules) | Reglas para agentes (design system resumido) |
 
-La documentación oficial del sitio se creará al pasar a producción.
+Esta carpeta `docs/` documenta el **MVP actual**. La documentación de producción se ampliará en esa fase.
 
 ---
 
