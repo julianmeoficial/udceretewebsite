@@ -8,9 +8,6 @@
  */
 import { readFile } from "fs/promises";
 import path from "path";
-import { posts as fallbackPosts } from "@/data/posts";
-import { resources as fallbackResources } from "@/data/resources";
-import { supportRoutes, testimonials } from "@/data/wellbeing";
 import { siteConfig } from "@/data/site";
 import type {
   CalendarEvent,
@@ -21,6 +18,11 @@ import type {
 } from "@/data/types";
 import { CMS_DIR, CMS_FILES } from "./paths";
 import { todayISO } from "@/lib/utils/dates";
+
+const EMPTY_WELLBEING: CmsWellbeing = {
+  supportRoutes: [],
+  testimonials: [],
+};
 
 async function readJsonFile<T>(filename: string, fallback: T): Promise<T> {
   try {
@@ -33,20 +35,13 @@ async function readJsonFile<T>(filename: string, fallback: T): Promise<T> {
 }
 
 export async function readCmsPosts(): Promise<CmsPost[]> {
-  const fallback: CmsPost[] = fallbackPosts.map((post, index) => ({
-    id: `post-${index + 1}`,
-    ...post,
-    status: "published",
-    updatedAt: post.publishedAt,
-    createdBy: post.author,
-  }));
-  return readJsonFile(CMS_FILES.posts, fallback);
+  return readJsonFile<CmsPost[]>(CMS_FILES.posts, []);
 }
 
 export async function readCmsResources(): Promise<Resource[]> {
   const raw = await readJsonFile<Array<Resource & { program?: string }>>(
     CMS_FILES.resources,
-    fallbackResources,
+    [],
   );
   return raw.map((item) => {
     const { program, ...rest } = item;
@@ -66,10 +61,7 @@ export async function readCmsEvents(): Promise<CalendarEvent[]> {
 }
 
 export async function readCmsWellbeing(): Promise<CmsWellbeing> {
-  return readJsonFile(CMS_FILES.wellbeing, {
-    supportRoutes,
-    testimonials,
-  });
+  return readJsonFile<CmsWellbeing>(CMS_FILES.wellbeing, EMPTY_WELLBEING);
 }
 
 export async function readCmsUsers(): Promise<CmsUser[]> {

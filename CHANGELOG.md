@@ -9,6 +9,7 @@ y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/) c
 
 ### Added
 
+- Documentación de diseño y arquitectura del MVP en `docs/` (identidad, colores, tipografía, layout, funciones, datos, auth, diagramas Mermaid).
 - `docs/mvp-strategy.md` — estrategia del MVP y frontera API (decisión diferida).
 - `CONTRIBUTING.md` y `CHANGELOG.md`.
 - Organización de `src/lib` en capas: `content/`, `citations/`, `calendar/`, `utils/` (además de `auth/`, `cms/`).
@@ -17,16 +18,23 @@ y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/) c
 ### Changed
 
 - Código de dominio movido de `components/*` y `lib/content` a `src/features/*`; `app/` queda como capa de rutas.
-
+- `/buscar` lee posts y recursos desde el CMS (server component + `SearchPageContent`).
+- CMS JSON como única fuente de posts/recursos/bienestar; eliminados seeds duplicados en `src/data/`.
+- Footer sin enlaces rotos a boletín; grid de 3 columnas.
 - `/buscar` solo búsqueda del sitio (sin modo IA demo).
 - Acceso rápido de portada: “Buscar en el sitio” en lugar de “Preguntar a la IA”.
 - Inputs/selects institucionales sin glassmorphism (`SelectField` nativo).
 
 ### Removed
 
+- Seeds duplicados: `src/data/posts.ts`, `src/data/resources.ts`.
+- Exports huérfanos en `calendar.ts`, `nav.ts`, `dates.ts`, `posts-shared.ts`.
+- Assets del template Next.js sin uso (`public/*.svg` del scaffold).
+- Enlaces de boletín/suscribirse en footer (feature eliminada).
+- Barrel `src/lib/utils/index.ts` sin consumidores.
 - `lib/ai-demo`, `GlassSelect`, `Newsletter`, `FadeInItem`.
 - Dependencia `motion`.
-- Documentación MVP excesiva (ADRs, architecture/, READMEs de carpetas); se retomará en producción.
+- Documentación MVP excesiva (ADRs, architecture/, READMEs de carpetas); reemplazada por `docs/`.
 
 ### Fixed
 

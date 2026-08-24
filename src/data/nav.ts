@@ -9,13 +9,6 @@ export const mainNav: NavItem[] = [
   { label: "Bienestar", href: "/bienestar" },
 ];
 
-export const footerNav: NavItem[] = [
-  { label: "Buscar", href: "/buscar" },
-  { label: "Acceso", href: "/acceso" },
-  { label: "Archivo", href: "/archivo" },
-  { label: "Calendario", href: "/calendario" },
-];
-
 export const mobileNav: NavItem[] = [
   { label: "Inicio", href: "/" },
   { label: "Blog", href: "/archivo" },

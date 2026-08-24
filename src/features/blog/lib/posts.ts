@@ -18,7 +18,6 @@ export {
   FEATURED_TAGS,
   getCategories,
   getFeaturedTags,
-  getPostTags,
   filterPostsList,
   type PostSort,
 } from "@/features/blog/lib/posts-shared";

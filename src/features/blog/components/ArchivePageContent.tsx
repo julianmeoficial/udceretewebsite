@@ -10,7 +10,7 @@ import type { Post } from "@/data/types";
 import {
   filterPostsList,
   getCategories,
-  getPostTags,
+  getFeaturedTags,
   type PostSort,
 } from "@/features/blog/lib/posts-shared";
 import styles from "./ArchivePageContent.module.css";
@@ -23,7 +23,7 @@ export function ArchivePageContent({ initialPosts }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const categories = getCategories();
-  const tags = getPostTags();
+  const tags = getFeaturedTags();
   const [category, setCategory] = useState("all");
   const [tag, setTag] = useState("all");
   const [query, setQuery] = useState("");

@@ -165,21 +165,6 @@ const examEvents: CalendarEvent[] = [
 
 export const calendarEvents: CalendarEvent[] = [...buildTutorialEvents(), ...examEvents];
 
-export function getUpcomingEvents(limit = 3): CalendarEvent[] {
-  const today = new Date("2026-07-31");
-  return calendarEvents
-    .filter((event) => new Date(`${event.date}T12:00:00`) >= today)
-    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-    .slice(0, limit);
-}
-
-export function getEventsForMonth(year: number, month: number): CalendarEvent[] {
-  return calendarEvents.filter((event) => {
-    const date = new Date(`${event.date}T12:00:00`);
-    return date.getFullYear() === year && date.getMonth() === month;
-  });
-}
-
 export function formatScheduleDay(iso: string): string {
   const date = new Date(`${iso}T12:00:00`);
   const day = date.getDate();

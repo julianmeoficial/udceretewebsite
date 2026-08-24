@@ -27,11 +27,6 @@ const institutionalLinks = [
   },
 ];
 
-const communityLinks = [
-  { label: "Boletín", href: "/#boletin" },
-  { label: "Suscribirse", href: "/#boletin" },
-];
-
 export function SiteFooter() {
   return (
     <footer className={styles.footer}>
@@ -85,23 +80,10 @@ export function SiteFooter() {
               ))}
             </ul>
           </div>
-
-          <div>
-            <p className={styles.heading}>Comunidad</p>
-            <ul className={styles.links}>
-              {communityLinks.map((item) => (
-                <li key={item.label}>
-                  <Link href={item.href} className={styles.link}>
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         <p className={styles.bottom}>
-          Prototipo MVP · {new Date().getFullYear()} · Universidad de Cartagena
+          {new Date().getFullYear()} · Universidad de Cartagena · Centro Tutorial Cereté
         </p>
       </div>
     </footer>

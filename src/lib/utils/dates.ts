@@ -16,10 +16,6 @@ export function isFutureDate(iso: string, relativeTo = todayISO()): boolean {
   return iso > relativeTo;
 }
 
-export function isPastDate(iso: string, relativeTo = todayISO()): boolean {
-  return iso < relativeTo;
-}
-
 export function formatLongDate(iso: string): string {
   const date = new Date(`${iso}T12:00:00`);
   return date.toLocaleDateString("es-CO", {

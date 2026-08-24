@@ -67,10 +67,7 @@ type SelectFieldProps = FieldProps &
     onChange?: (value: string) => void;
   };
 
-/**
- * Select nativo institucional.
- * Sustituye el GlassSelect del MVP (glassmorphism, fuera de design system).
- */
+/** Select nativo alineado al design system institucional. */
 export function SelectField({
   label,
   hint,

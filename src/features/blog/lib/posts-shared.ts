@@ -32,10 +32,6 @@ export function getFeaturedTags(): string[] {
   return [...FEATURED_TAGS];
 }
 
-export function getPostTags(): string[] {
-  return getFeaturedTags();
-}
-
 export type PostSort = "recent" | "title";
 
 export function filterPostsList(
